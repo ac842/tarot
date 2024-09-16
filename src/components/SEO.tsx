@@ -21,7 +21,7 @@ const SEO = ({ title, description, url, image }) => {
   const metaTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
   const metaUrl = url || site.siteMetadata.siteUrl;
-  const metaImage = image || `${site.siteMetadata.siteUrl}/default-image.jpg`;
+  const metaImage = image || `${site.siteMetadata.siteUrl}/tarot-icon.png`;
 
   return (
     <Helmet>

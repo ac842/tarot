@@ -7,8 +7,8 @@ const importAll = (r: any) => {
   return images;
 };
 
-// 導入所有 0.jpg 到 76.jpg 的圖片
-const tarotImages = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+// 導入所有 0.png 到 76.png 的圖片
+const tarotImages = importAll(require.context('./images', false, /\.(png|svg)$/));
 
 export interface TarotCard {
   name: string;
