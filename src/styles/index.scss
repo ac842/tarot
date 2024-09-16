@@ -1,0 +1,53 @@
+/* src/styles/index.scss */
+
+/* 引入 Google Fonts 的 cwTeXYen 字體 */
+@import url('https://fonts.googleapis.com/css2?family=cwTeXYen:wght@400;700&display=swap');
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #000, #1a1a1a); /* 線性漸變背景 */
+  color: #ffd700; /* 亮金色字體 */
+  min-height: 100vh;
+  font-family: 'cwTeXYen', sans-serif; /* 使用 Google Fonts 的 cwTeXYen 字體 */
+}
+
+.hero-title {
+  font-size: 3.5rem; /* 標題稍微加大 */
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-family: 'cwTeXYen', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+}
+
+.hero-description {
+  font-size: 1.7rem; /* 稍微增大描述字體 */
+  color: #e6be8a; /* 柔和的金色字體 */
+  margin-bottom: 2.5rem;
+  max-width: 600px; /* 限制描述的最大寬度 */
+  font-family: 'cwTeXYen', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* 添加輕微陰影效果 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem; /* 調整手機端標題字體大小 */
+  }
+  .hero-description {
+    font-size: 1.4rem; /* 調整手機端描述字體大小 */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem; /* 額外調整小屏幕設備的字體大小 */
+  }
+  .hero-description {
+    font-size: 1.2rem; /* 調整小屏幕的描述字體大小 */
+  }
+}

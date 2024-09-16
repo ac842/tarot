@@ -1,0 +1,39 @@
+/* src/styles/global.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .tarot-card-display {
+    text-align: center;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 200px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .card p {
+    font-size: 14px;
+  }
