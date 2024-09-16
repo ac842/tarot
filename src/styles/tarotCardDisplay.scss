@@ -54,6 +54,11 @@
       margin-bottom: 1rem;
       border: 2px solid #daa520; /* 更亮的金色邊框 */
       border-radius: 8px;
+      transition: transform 0.3s; /* 添加過渡效果 */
+    }
+
+    img.reversed {
+      transform: rotateY(180deg); /* 水平翻轉圖片 */
     }
 
     h3 {

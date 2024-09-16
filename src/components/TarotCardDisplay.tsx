@@ -2,17 +2,21 @@
 
 import React, { useState } from "react";
 import { tarotCards } from "../data/tarotCards";
-import { drawCards } from "../utils/shuffle";
-import { TarotCard } from "../data/tarotCards";
-
-// 引入樣式
 import "../styles/tarotCardDisplay.scss";
 
 const TarotCardDisplay: React.FC = () => {
   const [selectedCards, setSelectedCards] = useState<TarotCard[]>([]);
 
   const handleDrawCards = () => {
-    const drawnCards = drawCards(tarotCards, 3); // 使用 drawCards 隨機抽取3張牌
+    // 隨機打亂牌組
+    const shuffledCards = tarotCards.sort(() => Math.random() - 0.5);
+
+    // 抽取前三張牌並隨機決定正位或逆位
+    const drawnCards = shuffledCards.slice(0, 5).map(card => ({
+      ...card,
+      isReversed: Math.random() < 0.5, // 50% 機率決定正位或逆位
+    }));
+
     setSelectedCards(drawnCards); // 更新選中的牌
   };
 
@@ -26,14 +30,15 @@ const TarotCardDisplay: React.FC = () => {
       <div className="cards-container">
         {selectedCards.map((card, index) => (
           <div key={index} className="card">
-            {/* 使用 Gatsby 靜態圖片 */}
-            <img src={card.image} alt={card.name} />
+            <img
+              src={card.image}
+              alt={card.name}
+              className={card.isReversed ? 'reversed' : ''}
+            />
             <h3>{card.name}</h3>
             <p>
-              <strong>正位:</strong> {card.uprightMeaning}
-            </p>
-            <p>
-              <strong>逆位:</strong> {card.reversedMeaning}
+              <strong>{card.isReversed ? '逆位:' : '正位:'}</strong> 
+              {card.isReversed ? card.reversedMeaning : card.uprightMeaning}
             </p>
           </div>
         ))}
