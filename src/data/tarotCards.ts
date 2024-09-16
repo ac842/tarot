@@ -8,7 +8,7 @@ const importAll = (r: any) => {
 };
 
 // 導入所有 0.png 到 76.png 的圖片
-const tarotImages = importAll(require.context('./images', false, /\.png$/));
+const tarotImages = importAll(require.context('./images', false, /\.svg$/));
 
 // 定義塔羅牌資料接口
 export interface TarotCard {
